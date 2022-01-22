@@ -24,22 +24,24 @@ class StudentAdmin(object):
 
 class RoomAdmin(object):
     is_execute = True
-    list_display = ('room_id', 'room_building','room_water','room_electricity')
+    list_display = ('room_id', 'room_building', 'room_water','room_electricity')
     search_fields = ['room_id']
+
 
 class MistakeAdmin(object):
     is_execute = True
-    list_display = ('mistake_id','case','date')
+    list_display = ('mistake_id', 'case', 'date')
     search_fields = ['mistake_id']
+
 
 class BuildingAdmin(object):
     is_execute = True
     search_fields = ['building_name']
 
 
-xadmin.site.register(Mistake,MistakeAdmin)
+xadmin.site.register(Mistake, MistakeAdmin)
 xadmin.site.register(Student, StudentAdmin)
 xadmin.site.register(Room, RoomAdmin)
-xadmin.site.register(Building,BuildingAdmin)
+xadmin.site.register(Building, BuildingAdmin)
 xadmin.site.register(views.BaseAdminView, BaseSetting)
 xadmin.site.register(views.CommAdminView, GlobalSettings)
